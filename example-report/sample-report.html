@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Security report — vm — 20261117-220800</title>
+<style>
+:root{--fg:#1f2328;--muted:#656d76;--line:#d0d7de;--bg:#fff;--card:#f6f8fa;--pass:#1a7f37;--warn:#9a6700;--fail:#cf222e;--info:#0969da}
+@media(prefers-color-scheme:dark){:root{--fg:#e6edf3;--muted:#8d96a0;--line:#30363d;--bg:#0d1117;--card:#161b22;--pass:#3fb950;--warn:#d29922;--fail:#f85149;--info:#58a6ff}}
+*{box-sizing:border-box}body{margin:0;font:15px/1.5 system-ui,-apple-system,Segoe UI,sans-serif;color:var(--fg);background:var(--bg)}
+main{max-width:1100px;margin:0 auto;padding:32px 20px}
+h1{margin:0 0 4px;font-size:24px}h2{margin:36px 0 12px;font-size:18px;border-bottom:1px solid var(--line);padding-bottom:6px}
+.muted{color:var(--muted)}
+.summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin-top:20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.card .k{font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}.card .v{font-size:26px;font-weight:650}
+.score .v{color:#1a7f37}
+table{width:100%;border-collapse:collapse;font-size:14px}th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12px;text-transform:uppercase;color:var(--muted)}
+.badge{display:inline-block;padding:1px 8px;border-radius:999px;font-size:12px;font-weight:600;color:#fff}
+.badge.pass{background:var(--pass)}.badge.warn{background:var(--warn)}.badge.fail{background:var(--fail)}.badge.info{background:var(--info)}
+.filters{margin:0 0 10px;display:flex;gap:6px}.filters button{border:1px solid var(--line);background:var(--card);color:var(--fg);border-radius:6px;padding:4px 10px;cursor:pointer}
+.filters button.on{border-color:var(--info);color:var(--info)}
+details{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:8px 12px;margin:8px 0}summary{cursor:pointer;font-weight:600}
+code{font:12.5px ui-monospace,SFMono-Regular,Menlo,monospace}ul{margin:6px 0;padding-left:22px}.warn-list li{color:var(--fail)}
+footer{margin-top:40px;font-size:13px;color:var(--muted)}
+</style></head><body><main>
+<h1>Security compliance report</h1>
+<div class="muted">vm · Ubuntu 24.04.5 LTS · kernel 6.18.44-fc-v553 · run <code>20261117-220800</code> (audit-only)</div>
+<div class="summary">
+  <div class="card score"><div class="k">Compliance score</div><div class="v">86%</div></div>
+  <div class="card"><div class="k">Passed</div><div class="v" style="color:var(--pass)">21</div></div>
+  <div class="card"><div class="k">Warnings</div><div class="v" style="color:var(--warn)">3</div></div>
+  <div class="card"><div class="k">Failed</div><div class="v" style="color:var(--fail)">2</div></div>
+  <div class="card"><div class="k">Lynis index</div><div class="v">62</div></div>
+  <div class="card"><div class="k">Changes this run</div><div class="v">0</div></div>
+</div>
+<h2>Checks</h2>
+<div class="filters"><button class="on" data-f="all">All</button><button data-f="fail">Fail</button><button data-f="warn">Warn</button><button data-f="pass">Pass</button></div>
+<table id="checks"><thead><tr><th>ID</th><th>Status</th><th>Check</th><th>Detail</th></tr></thead><tbody>
+<tr class="pass"><td><code>PRM-01</code></td><td><span class="badge pass">PASS</span></td><td>Critical system files have correct mode/owner</td><td></td></tr>
+<tr class="fail"><td><code>PRM-02</code></td><td><span class="badge fail">FAIL</span></td><td>No world-writable files</td><td>2 found</td></tr>
+<tr class="pass"><td><code>PRM-03</code></td><td><span class="badge pass">PASS</span></td><td>World-writable dirs have sticky bit</td><td></td></tr>
+<tr class="pass"><td><code>PRM-04</code></td><td><span class="badge pass">PASS</span></td><td>No unowned files/dirs</td><td></td></tr>
+<tr class="pass"><td><code>PRM-05</code></td><td><span class="badge pass">PASS</span></td><td>No new SUID/SGID binaries since baseline</td><td>19 total</td></tr>
+<tr class="pass"><td><code>PRM-06</code></td><td><span class="badge pass">PASS</span></td><td>Home directories are 750 or stricter</td><td></td></tr>
+<tr class="pass"><td><code>SSH-01</code></td><td><span class="badge pass">PASS</span></td><td>Root login over SSH disabled</td><td></td></tr>
+<tr class="pass"><td><code>SSH-02</code></td><td><span class="badge pass">PASS</span></td><td>SSH password authentication disabled</td><td></td></tr>
+<tr class="pass"><td><code>SSH-03</code></td><td><span class="badge pass">PASS</span></td><td>SSH public-key authentication enabled</td><td></td></tr>
+<tr class="pass"><td><code>SSH-04</code></td><td><span class="badge pass">PASS</span></td><td>SSH MaxAuthTries ≤ 4</td><td>3</td></tr>
+<tr class="pass"><td><code>SSH-05</code></td><td><span class="badge pass">PASS</span></td><td>SSH X11 forwarding disabled</td><td></td></tr>
+<tr class="pass"><td><code>SSH-06</code></td><td><span class="badge pass">PASS</span></td><td>SSH empty passwords refused</td><td></td></tr>
+<tr class="pass"><td><code>SSH-07</code></td><td><span class="badge pass">PASS</span></td><td>A non-root sudo user can log in with a key</td><td>deploy rheluser </td></tr>
+<tr class="pass"><td><code>FW-01</code></td><td><span class="badge pass">PASS</span></td><td>Firewall (UFW) active</td><td></td></tr>
+<tr class="pass"><td><code>FW-02</code></td><td><span class="badge pass">PASS</span></td><td>Default inbound policy is deny</td><td></td></tr>
+<tr class="pass"><td><code>FW-03</code></td><td><span class="badge pass">PASS</span></td><td>SSH port allowed (rate-limited)</td><td></td></tr>
+<tr class="pass"><td><code>F2B-01</code></td><td><span class="badge pass">PASS</span></td><td>Fail2ban jail configured</td><td>service state not checkable without systemd</td></tr>
+<tr class="pass"><td><code>UPD-01</code></td><td><span class="badge pass">PASS</span></td><td>Automatic security updates enabled</td><td>unattended-upgrades</td></tr>
+<tr class="warn"><td><code>UPD-02</code></td><td><span class="badge warn">WARN</span></td><td>No pending security updates</td><td>23 pending</td></tr>
+<tr class="pass"><td><code>UPD-03</code></td><td><span class="badge pass">PASS</span></td><td>No reboot pending</td><td></td></tr>
+<tr class="pass"><td><code>SVC-02</code></td><td><span class="badge pass">PASS</span></td><td>No legacy insecure packages installed</td><td></td></tr>
+<tr class="warn"><td><code>MAC-01</code></td><td><span class="badge warn">WARN</span></td><td>AppArmor enabled</td><td>not enabled or not available</td></tr>
+<tr class="fail"><td><code>KRN-01</code></td><td><span class="badge fail">FAIL</span></td><td>Kernel hardening parameters active</td><td>10/25</td></tr>
+<tr class="pass"><td><code>ACC-01</code></td><td><span class="badge pass">PASS</span></td><td>Only root has UID 0</td><td></td></tr>
+<tr class="pass"><td><code>ACC-02</code></td><td><span class="badge pass">PASS</span></td><td>No accounts with empty passwords</td><td></td></tr>
+<tr class="warn"><td><code>LYN-01</code></td><td><span class="badge warn">WARN</span></td><td>Lynis hardening index ≥ 65</td><td>62/100, 2 warnings, 43 suggestions</td></tr>
+</tbody></table>
+<h2>Changes made in this run</h2>
+<p class="muted">None — the system already matched this tool's configuration (idempotent run).</p>
+<h2>Lynis</h2>
+<h3>Warnings</h3><ul class="warn-list"><li>PKGS-7392: Found one or more vulnerable packages.</li><li>LOGG-2138: klogd is not running, which could lead to missing kernel messages in log files</li></ul><details><summary>Suggestions (43, top 25 shown)</summary><ul><li>LYNIS: This release is more than 4 months old. Check the website or GitHub to see if there is an update available.</li><li>DEB-0280: Install libpam-tmpdir to set $TMP and $TMPDIR for PAM sessions</li><li>DEB-0810: Install apt-listbugs to display a list of critical bugs prior to each APT installation.</li><li>DEB-0831: Install needrestart, alternatively to debian-goodies, so that you can run needrestart after upgrades to determine which daemons are using old versions of libraries and need restarting.</li><li>DEB-0880: Copy /etc/fail2ban/jail.conf to jail.local to prevent it being changed by updates.</li><li>BOOT-5180: Determine runlevel and services at startup</li><li>BOOT-5264: Consider hardening system services (Run '/usr/bin/systemd-analyze security SERVICE' for each service)</li><li>KRNL-5788: Determine why /vmlinuz or /boot/vmlinuz is missing on this Debian/Ubuntu system. (/vmlinuz or /boot/vmlinuz)</li><li>KRNL-5820: If not required, consider explicit disabling of core dump in /etc/security/limits.conf file</li><li>AUTH-9230: Configure password hashing rounds in /etc/login.defs</li><li>AUTH-9262: Install a PAM module for password strength testing like pam_cracklib or pam_passwdqc</li><li>AUTH-9284: Look at the locked accounts and consider removing them</li><li>AUTH-9286: Configure minimum password age in /etc/login.defs</li><li>AUTH-9286: Configure maximum password age in /etc/login.defs</li><li>AUTH-9328: Default umask in /etc/login.defs could be more strict like 027</li><li>FILE-6310: To decrease the impact of a full /home file system, place /home on a separate partition</li><li>FILE-6310: To decrease the impact of a full /tmp file system, place /tmp on a separate partition</li><li>FILE-6310: To decrease the impact of a full /var file system, place /var on a separate partition</li><li>USB-1000: Disable drivers like USB storage when not used, to prevent unauthorized storage or data theft</li><li>STRG-1846: Disable drivers like firewire storage when not used, to prevent unauthorized storage or data theft</li><li>NAME-4028: Check DNS configuration for the dns domain name</li><li>PKGS-7370: Install debsums utility for the verification of packages with known good database.</li><li>PKGS-7392: Update your system with apt-get update, apt-get upgrade, apt-get dist-upgrade and/or unattended-upgrades</li><li>PKGS-7394: Install package apt-show-versions for patch management purposes</li><li>NETW-3200: Determine if protocol 'dccp' is really needed on this system</li></ul></details>
+<h2>File findings</h2>
+<details><summary>World-writable files (2)</summary><ul><li><code>/root/.cache/uv/.lock</code></li><li><code>/root/.local/share/uv/tools/.lock</code></li></ul></details><details><summary>All SUID/SGID binaries (19)</summary><ul><li><code>/usr/bin/chage</code></li><li><code>/usr/bin/chfn</code></li><li><code>/usr/bin/chsh</code></li><li><code>/usr/bin/expiry</code></li><li><code>/usr/bin/fusermount3</code></li><li><code>/usr/bin/gpasswd</code></li><li><code>/usr/bin/mount</code></li><li><code>/usr/bin/newgrp</code></li><li><code>/usr/bin/passwd</code></li><li><code>/usr/bin/ssh-agent</code></li><li><code>/usr/bin/su</code></li><li><code>/usr/bin/sudo</code></li><li><code>/usr/bin/umount</code></li><li><code>/usr/lib/dbus-1.0/dbus-daemon-launch-helper</code></li><li><code>/usr/lib/openssh/ssh-keysign</code></li><li><code>/usr/lib/polkit-1/polkit-agent-helper-1</code></li><li><code>/usr/lib/x86_64-linux-gnu/utempter/utempter</code></li><li><code>/usr/sbin/pam_extrausers_chkpwd</code></li><li><code>/usr/sbin/unix_chkpwd</code></li></ul></details>
+<footer>Generated by harden.sh v1.0.0 · Backups in <code>/var/backups/hardening/20261117-220800</code> · Roll back with <code>sudo harden.sh --rollback 20261117-220800</code></footer>
+</main>
+<script>
+document.querySelectorAll('.filters button').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('.filters button').forEach(x=>x.classList.toggle('on',x===b));
+  const f=b.dataset.f;document.querySelectorAll('#checks tbody tr').forEach(r=>r.style.display=(f==='all'||r.classList.contains(f))?'':'none');
+});
+</script></body></html>
